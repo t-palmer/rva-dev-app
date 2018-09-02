@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "rva-dev-lib": [
+        "dist/rva-dev-lib"
+      ],
+      "rva-dev-lib/*": [
+        "dist/rva-dev-lib/*"
+      ]
+    }
   }
 }

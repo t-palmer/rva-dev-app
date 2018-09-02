@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "rva-dev-lib": {
+      "root": "projects/rva-dev-lib",
+      "sourceRoot": "projects/rva-dev-lib/src",
+      "projectType": "library",
+      "prefix": "rva",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/rva-dev-lib/tsconfig.lib.json",
+            "project": "projects/rva-dev-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/rva-dev-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rva-dev-lib/src/test.ts",
+            "tsConfig": "projects/rva-dev-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/rva-dev-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/rva-dev-lib/tsconfig.lib.json",
+              "projects/rva-dev-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "rva-dev-app"
