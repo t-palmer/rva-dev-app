@@ -4,9 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build --prod",
+    "build-lib": "ng build --prod rva-dev-lib",
+    "test": "ng test rva-dev-app --code-coverage",
+    "test-lib": "ng test rva-dev-lib --code-coverage",
     "lint": "ng lint",
+    "lint-lib": "ng lint rva-dev-lib",
     "e2e": "ng e2e"
   },
   "private": true,
