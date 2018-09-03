@@ -6,6 +6,8 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "build-lib": "ng build --prod rva-dev-lib",
+    "npm-pack": "cd dist/rva-dev-lib && npm pack",
+    "package": "npm run build-lib && npm run npm-pack",
     "test": "ng test rva-dev-app --code-coverage",
     "test-lib": "ng test rva-dev-lib --code-coverage",
     "lint": "ng lint",
