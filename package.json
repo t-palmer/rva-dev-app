@@ -1,13 +1,16 @@
 {
   "name": "rva-dev-app",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
     "build-lib": "ng build --prod rva-dev-lib",
+    "copy-license": "copy .\\LICENSE .\\dist\\rva-dev-lib",
+    "copy-readme": "copy .\\README.md .\\dist\\rva-dev-lib",
+    "copy-files": "npm run copy-license && npm run copy-readme",
     "npm-pack": "cd dist/rva-dev-lib && npm pack",
-    "package": "npm run build-lib && npm run npm-pack",
+    "package": "npm run build-lib && npm run copy-files && npm run npm-pack",
     "test": "ng test rva-dev-app --code-coverage",
     "test-lib": "ng test rva-dev-lib --code-coverage",
     "lint": "ng lint",
